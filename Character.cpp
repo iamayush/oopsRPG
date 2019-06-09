@@ -16,6 +16,10 @@ void Character::setHealth(int health){
  _health = health;
 }
 
+int Character::getHealth(){
+ return _health;
+}
+
 void Character::printStats(){
  cout<<"Name: "<<_name<<endl
      <<"Health: "<<_health<<endl

@@ -2,7 +2,7 @@
 #define HERO_H
 class Hero: public Character{
  public:
-  void attack();
+  int attack();
  private:
   int _numPotions; 
 };

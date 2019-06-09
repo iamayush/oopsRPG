@@ -7,6 +7,7 @@ class Character{
   void setName(string name);
   void setAttackPower(int attackPower);
   void setHealth(int health);
+  int getHealth();
  protected:
   string _name;
   int _attackPower;

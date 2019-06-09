@@ -5,6 +5,7 @@ using namespace std;
 #include "Character.h"
 #include "Hero.h"
 
-void Hero::attack(){
+int Hero::attack(){
  cout<<"AAAHH!! Repent for your sins!"<<endl;
+ return _attackPower;
 }
