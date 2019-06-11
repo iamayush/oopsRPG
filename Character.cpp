@@ -25,3 +25,9 @@ void Character::printStats(){
      <<"Health: "<<_health<<endl
      <<"Attack Power: "<<_attackPower<<endl;
 }
+/*
+virtual int Character::attack(){
+ cout<<"Shouldn't come here ever"<<endl;
+ return 20;
+}
+*/

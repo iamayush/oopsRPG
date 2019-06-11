@@ -3,7 +3,7 @@
 
 class Swordsman:public Character{
  public:
-  void attack();
+  int attack();
  
 };
 #endif

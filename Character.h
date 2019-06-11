@@ -8,6 +8,7 @@ class Character{
   void setAttackPower(int attackPower);
   void setHealth(int health);
   int getHealth();
+  virtual int attack() = 0;
  protected:
   string _name;
   int _attackPower;
