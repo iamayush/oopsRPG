@@ -5,21 +5,21 @@ using namespace std;
 #include "Character.h"
 #include "Room.h"
 
-Room::Room(Room &parent,
-           Room &next1,
-           Room &next2,
-           Character &char1,
-           Character &char2,
+Room::Room(Character *char1,
+           Character *char2,
            int numShield,
            int numPotion)
-: _parent(&parent),
-_next1(&next1),
-_next2(&next2),
-_char1(&char1),
-_char2(&char2),
+: _char1(char1),
+_char2(char2),
 _numShield(numShield),
 _numPotion(numPotion)
 {
+}
+
+void Room::setNeighbors(Room *parent,Room* next1,Room *next2){
+ _parent = parent;
+ _next1 = next1;
+ _next2 = next2;
 }
 
 void Room::printRoomInfo(){
@@ -66,3 +66,6 @@ void Room::clearRoom(){
  _isRoomClear = 1;
 }
 
+Character* Room::getChar1(){
+ return _char1;
+}

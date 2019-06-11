@@ -2,11 +2,8 @@
 #define ROOM_H
 class Room{
  public:
-  Room(Room &parent,
-       Room &next1,
-       Room &next2,
-       Character &char1,
-       Character &char2,
+  Room(Character *char1,
+       Character *char2,
        int numShield,
        int numPotion);
   void printRoomInfo();
@@ -17,6 +14,8 @@ class Room{
   int getNumPotion();
   char getIsRoomClear();
   void clearRoom(); //sets isRoomClear = 1 
+  void setNeighbors(Room *parent,Room *next1,Room *next2);
+  Character* getChar1();
  private:
   Room *_parent;
   Room *_next1;
