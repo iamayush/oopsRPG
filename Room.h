@@ -16,6 +16,7 @@ class Room{
   void clearRoom(); //sets isRoomClear = 1 
   void setNeighbors(Room *parent,Room *next1,Room *next2);
   Character* getChar1();
+  Character* getChar2();
  private:
   Room *_parent;
   Room *_next1;

@@ -4,16 +4,17 @@ using namespace std;
 
 #include "Character.h"
 #include "Hero.h"
+#include "Room.h"
 
 int Hero::attack(){
  cout<<"AAAHH!! Repent for your sins!"<<endl;
  return _attackPower;
 }
 
-void Hero::setLocation(int location){
+void Hero::setLocation(Room *location){
  _location = location;
 }
 
-int Hero::getLocation(){
+Room* Hero::getLocation(){
  return _location;
 }

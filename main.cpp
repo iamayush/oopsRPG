@@ -8,66 +8,39 @@ using namespace std;
 #include "Room.h"
 #include "Map.h"
  
+void battle(Character *c1,Character *c2);
+
+Hero hero;
+
 int main(){
- Hero hero;
- Swordsman s1;
+ initMap();
+ char gameOver = 0;
+
+ hero.setLocation(&room0);
  hero.setName("Wesley");
  hero.setAttackPower(2);
  hero.setHealth(20);
  hero.printStats();
- s1_room1.setName("Spencer the Fencer");
- s1_room1.setHealth(10);
- s1_room1.setAttackPower(2);
- room0.setNeighbors(&room0,&room1,&room2);
- room0.setRoomDesc("Welcome to the game! Choose a door- 1 or 2?");
+ 
+ while(!gameOver){ 
+  Room &curr = *(hero.getLocation());
+  curr.printRoomInfo();
 
- room1.setNeighbors(&room0,NULL,NULL);
- room1.setRoomDesc("GOtcha!");
+  battle(curr.getChar1(),curr.getChar2());
 
- room2.setNeighbors(&room0,NULL,NULL);
- room2.setRoomDesc("Nothing here yet");
-
- cout<<"Hero is in room "<<hero.getLocation()<<endl;
- while(hero.getLocation() != 99){
-  switch(hero.getLocation()){
-   case 0:
-    room0.printRoomInfo();
-    hero.setLocation(1);
-    break;
-
-   case 1:
-    room1.printRoomInfo();
-    hero.setLocation(99);
-    break;
-  }
- }
-/* // hero.attack();
- // s1.attack();
- s1.setName("Fencer");
- s1.setHealth(8);
-
- // battle 
- while(1){
-  cout<<"Hero"<<endl;
-  hero.printStats();
-  cout<<"Swordsman"<<endl;
-  s1.printStats();
-
-  cout<<"attack?"<<endl;
-  string userMove;
-  cin>>userMove;
-
-  if (userMove =="Y"){
-   s1.setHealth(s1.getHealth()-hero.attack());
-  }
-
-  if (s1.getHealth() <= 0){
-   cout<<"I slayed you puny swordsman!"<<endl;
-   s1.setHealth(0);
-   break;
-  }
+  cout<<"Do you want to go to room1?"<<endl;
+  string userInput;
+  cin>>userInput;
+  if (userInput == "Y") hero.setLocation(&room1);
+  if (&curr == &room1) gameOver = 1;
  }
 
- cout<<"You Won!"<<endl;*/
  return 0;
 }
+
+void battle(Character *c1,Character *c2){
+ if ((c1 == NULL) && (c2 == NULL)) return;
+
+ 
+
+} 

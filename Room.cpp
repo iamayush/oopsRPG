@@ -69,3 +69,7 @@ void Room::clearRoom(){
 Character* Room::getChar1(){
  return _char1;
 }
+
+Character* Room::getChar2(){
+ return _char2;
+}
